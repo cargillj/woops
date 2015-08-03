@@ -1,4 +1,3 @@
-# Your [DocPad](http://docpad.org) Project
-
-## License
-Copyright &copy; 2015+ All rights reserved.
+#woops#
+The personal error logging site I've made
+using DocPad and am hosting on GitHub Pages
