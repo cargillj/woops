@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+<div class="post">
+	<h2><%= @document.title %></h2><h4>on <%= @document.date.toLocaleDateString({ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %></h4>
+	<%- @content %>
+	<br>tags: <%- @document.tags %>
+	<a id="back_button" href="/index.html">back</a>
+</div>

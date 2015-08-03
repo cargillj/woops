@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= @getPreparedTitle() %></title>
+	<%- @getBlock("meta").toHTML() %>
+	<%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
+	<%- @getBlock("scripts").add(["/scripts/script.js"]).toHTML() %>
+</head>
+<body>
+	<nav>
+		<h1>woops</h1>
+		<ul id="nav_links">
+		<% for page in @getCollection("pages").toJSON(): %>
+			<li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
+				<a href="<%= page.url %>"><%= page.title %></a>
+			</li>
+		<% end %>
+		</ul>
+	</nav>
+	<div id="container"><%- @content %></div>
+	<%- @getBlock("scripts").toHTML() %>
+</body>
+</html>

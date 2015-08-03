@@ -1,0 +1,27 @@
+---
+title: "home"
+isPage: true
+order: 1
+---
+
+
+<h2>recent mistakes</h2>
+<ul id="posts">
+<% for post in @getCollection("posts").toJSON(): %>
+	<li class="post">
+		<h2><%= post.title %></h2>
+		<h4>on <%= post.date.toLocaleDateString({ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %></h4>
+		<p>
+			<%= post.description %> <a href="<%= post.url %>">(read more)</a>
+		</p>
+	</li>
+<% end %>
+</ul>
+<h3>tags:</h3>
+<ul id="tag_list">
+	<% for tag in @getCollection("tags").toJSON(): %>
+		<li>
+			<a href="<%= tag.url %>">#<%= tag.title.slice(5) %></a>
+		</li>
+	<% end %>
+</ul>
